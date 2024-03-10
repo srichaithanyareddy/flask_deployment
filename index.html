@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Regex Matching and Email Validation</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffbfbf; /* Light red color */
+    }
+
+    h1 {
+        background-color: #ff6666; /* Darker red color for headings */
+        color: white;
+        text-align: center;
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .regex-section,
+    .email-section {
+        background-color: #ffd9d9; /* Light red color for sections */
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+
+
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="submit"] {
+            width: 40%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            display: block;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+  <h1>Regex Matching</h1>
+  <form method="POST">
+      <div style="text-align: center;">
+          <label for="test_string">Test String:</label><br>
+          <input type="text" id="test_string" name="test_string"><br><br>
+          <label for="regex_pattern">Regex Pattern:</label><br>
+          <input type="text" id="regex_pattern" name="regex_pattern"><br><br>
+          <input type="submit" value="Match">
+      </div>
+  </form>
+  <!-- Assuming "matches" is a JavaScript variable containing match information -->
+  <div style="text-align: center;">
+      <h2>Matches:</h2>
+      <ul id="matchesList"></ul>
+  </div>
+
+  <script>
+      // Replace the following JavaScript code with your logic to populate matches
+      var matches = ["Match 1", "Match 2", "Match 3"];
+      var matchesList = document.getElementById("matchesList");
+      matches.forEach(function(match) {
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode(match));
+          matchesList.appendChild(li);
+      });
+  </script>
+  
+  <h1>Email Validation</h1>
+  <form method="POST">
+      <input type="hidden" name="validation_type" value="email">
+      <div style="text-align: center;">
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email"><br>
+          <input type="submit" value="Validate Email">
+      </div>
+  </form>
+  <!-- Assuming "email" and "is_valid" are JavaScript variables -->
+  <div style="text-align: center;">
+      <p id="emailResult"></p>
+      <p id="validityResult"></p>
+  </div>
+
+  <script>
+      // Replace the following JavaScript code with your logic for email validation
+      var email = "example@email.com"; // Replace with your email variable
+      var is_valid = true; // Replace with your is_valid variable
+      var emailResult = document.getElementById("emailResult");
+      var validityResult = document.getElementById("validityResult");
+
+      emailResult.innerText = "Email: " + email;
+      validityResult.innerText = is_valid ? "Valid Email Address" : "Invalid Email Address";
+  </script>
+</body>
+</html>
+
